@@ -1,5 +1,4 @@
 @import url("var.css");
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap"); */
 @font-face {
     font-family: Roboto-Flex;
     src: url(RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf);
@@ -15,9 +14,11 @@
     --text-primary: #2c3e50;   
     --text-secondary: #555;    
 
-    --color-primary: #18bc9c; 
-    --color-primary-dark: #15a589;
-    --color-header: #34495e;   
+    --color-primary: color(srgb 0.0941 0.7373 0.6118);
+    --color-primary-dark: color(srgb 0.0824 0.6471 0.5373);
+    --color-header: color(srgb 0.2039 0.2863 0.3686);   
+
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, black 20%);
 } 
 
 
@@ -32,8 +33,7 @@ body{
     width: 90dvw;
     height: 100dvh;
     margin: 0 auto;
-    /* font-family: 'Robotsasdao Flex', 'Arial', sans-serif; */
-    font-family: Roboto-Flex, 'Papyrus', fantasy;
+    font-family: Roboto-Flex, 'Open Sans', sans-serif;
     background: var(--bg-page, #f0f2f5);
     color: var(--text-primary);
     line-height: 1.5;
@@ -82,7 +82,7 @@ header {
 
         }
         li a:hover{
-            background: var(--color-primary-dark, #15a589);
+            background: var(--color-primary-hover, #15a589);
             transform: scale(1.05);
         }
 
@@ -114,10 +114,7 @@ main{
             text-decoration: underline;
             margin-bottom: 1rem;
             text-align:  left;
-            /* margin-bottom: 0.5rem; */
             color: var(--color-primary, #18bc9c);
-            /* border-bottom: 2px solid var(--color-primary); */
-            /* display: inline-block; */
             padding-bottom: 0.2rem;
         }
         p, li {
@@ -194,12 +191,12 @@ form {
     legend {
         font-size: 1.25rem;
         font-weight: bold;
-        color: var(--color-primary);
+        color: var(--color-primary, #18bc9c);
     }
     label {
         display: block;
         margin-bottom: 0.25rem;
-        color: var(--text-primary);
+        color: var(--text-primary, #2c3e50);
     }
     input,
     textarea {
@@ -227,8 +224,8 @@ form {
     }
 
     @keyframes buttonAnimation {
-        from { background: var(--color-primary);}
-        to {background: var(--color-primary-dark);
+        from { background: var(--color-primary, #18bc9c);}
+        to {background: var(--color-primary-hover, #15a589);
             transform: scale(1.05);}
     }
 
@@ -245,7 +242,7 @@ footer table {
 }
 
 footer caption {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #18bc9c);
     caption-side: top;
     font-size: 1.2rem;
     font-weight: bold;
@@ -260,7 +257,7 @@ footer td {
 }
 
 footer th {
-    background: var(--color-primary);
+    background: var(--color-primary, #18bc9c);
     color: white;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -286,7 +283,7 @@ footer th {
     }
     #nav-menu summary {
         list-style: none;
-        background: var(--color-primary);
+        background: var(--color-primary, #18bc9c);
         color: #fff;
         padding: 0.5rem 1rem;
         border-radius: 4px;
@@ -331,7 +328,7 @@ footer th {
     #nav-menu ul li a {
         display: block;
         padding: 0.5rem 1rem;
-        background: var(--color-primary);
+        background: var(--color-primary, #18bc9c);
         border-radius: 4px;
         color: white;
         text-decoration: none;
@@ -355,8 +352,6 @@ footer th {
 
 }
 
-
-
 @media (min-width: 801px) and (max-width: 1024px) {
 
     #about-section {
@@ -378,8 +373,6 @@ footer th {
         flex-direction: row;
     }
 }
-
-
 
 @media screen and (min-width: 1025px) {  
     #nav-menu{
